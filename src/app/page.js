@@ -6,22 +6,29 @@ import { Card, Carousel } from "./components/ui/apple-cards-carousel";
 export default function Home() {
   const carouselItems = [
     {
-      category: "Project 1",
-      title: "Amazing App",
-      src: "/Headshot1.png",
-      content: "This is a placeholder for Project 1 content."
+      category: "",
+      title: "",
+      src: "/CalorieTracker (2).jpg"
     },
     {
-      category: "Project 2",
-      title: "Awesome Website",
-      src: "/dt.png",
-      content: "This is a placeholder for Project 2 content."
+      category: "",
+      title: "",
+      src: "/CalorieTracker (3).jpg"
     },
     {
-      category: "Project 3",
-      title: "Awesome Tool",
-      src: "/placeholder-image-3.jpg",
-      content: "This is a placeholder for Project 3 content."
+      category: "",
+      title: "",
+      src: "/CalorieTracker (1).jpg"
+    },
+    {
+      category: "",
+      title: "",
+      src: "/CalorieTracker (5).jpg"
+    },
+    {
+      category: "",
+      title: "",
+      src: "/CalorieTracker (4).jpg"
     },
   ];
 
