@@ -102,6 +102,7 @@ export const Card = ({
 }) => {
     const [open, setOpen] = useState(false);
     const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
+    const [isLandscape, setIsLandscape] = useState(false);
     const containerRef = useRef(null);
 
     useEffect(() => {
@@ -135,6 +136,7 @@ export const Card = ({
     const handleImageLoad = (e) => {
         const { naturalWidth, naturalHeight } = e.target;
         setImageDimensions({ width: naturalWidth, height: naturalHeight });
+        setIsLandscape(naturalWidth > naturalHeight);
     };
 
     return (
@@ -177,18 +179,16 @@ export const Card = ({
                 onClick={handleOpen}
                 className={cn(
                     "rounded-3xl bg-gray-100 dark:bg-neutral-900 overflow-hidden flex flex-col items-start justify-start relative z-10",
-                    // Reverted to original dimensions
-                    "h-72 w-56 md:h-[36rem] md:w-96"
+                    isLandscape ? "h-36 w-72 md:h-96 md:w-[36rem]" : "h-72 w-32 md:h-[36rem] md:w-64" // Different styles for landscape and portrait
                 )}
             >
                 <BlurImage
                     src={card.src}
                     alt={card.title}
                     fill
-                    className="object-contain absolute z-10 inset-0" // Changed to object-contain
+                    className="object-contain absolute z-10 inset-0"
                     onLoad={handleImageLoad}
                 />
-                {/* Space for text */}
                 <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full text-white z-20">
                     <h3 className="text-xl font-semibold">{card.title}</h3>
                 </div>
@@ -196,6 +196,7 @@ export const Card = ({
         </>
     );
 };
+
 
 
 
