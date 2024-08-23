@@ -153,7 +153,6 @@ export const Card = ({
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             ref={containerRef}
-                            // layoutId={layout ? `card-${card.title}` : undefined}
                             className="relative z-[60] max-h-[90vh] max-w-[90vw] p-4"
                         >
                             <button
@@ -175,10 +174,10 @@ export const Card = ({
                 )}
             </AnimatePresence>
             <motion.button
-                // layoutId={layout ? `card-${card.title}` : undefined}
                 onClick={handleOpen}
                 className={cn(
                     "rounded-3xl bg-gray-100 dark:bg-neutral-900 overflow-hidden flex flex-col items-start justify-start relative z-10",
+                    // Reverted to original dimensions
                     "h-72 w-56 md:h-[36rem] md:w-96"
                 )}
             >
@@ -186,13 +185,19 @@ export const Card = ({
                     src={card.src}
                     alt={card.title}
                     fill
-                    className="object-cover absolute z-10 inset-0"
+                    className="object-contain absolute z-10 inset-0" // Changed to object-contain
                     onLoad={handleImageLoad}
                 />
+                {/* Space for text */}
+                <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full text-white z-20">
+                    <h3 className="text-xl font-semibold">{card.title}</h3>
+                </div>
             </motion.button>
         </>
     );
 };
+
+
 
 export const BlurImage = ({
     height,

@@ -32,6 +32,13 @@ export default function Home() {
     },
   ];
 
+  const carouselItems1 = [
+    {
+      category: "",
+      title: "",
+      src: "/dt.png"
+    },
+  ];
   return (
     <main className="min-h-screen bg-black flex flex-col items-center p-4 w-full sm:p-14">
       <div className="w-full max-w-4xl flex flex-col md:flex-row justify-center items-center">
@@ -80,6 +87,12 @@ export default function Home() {
       {/* Bottom: Apple Cards Carousel */}
       <div className="max-w-5xl mt-10 flex justify-center w-full">
         <Carousel items={carouselItems.map((item, index) => (
+          <Card key={index} card={item} index={index} layout={true} />
+        ))} />
+      </div>
+
+      <div className="max-w-5xl mt-10 flex justify-center w-full">
+        <Carousel items={carouselItems1.map((item, index) => (
           <Card key={index} card={item} index={index} layout={true} />
         ))} />
       </div>
