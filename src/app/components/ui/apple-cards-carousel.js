@@ -144,6 +144,7 @@ export const Card = ({
     layout = false,
 }) => {
     const [open, setOpen] = useState(false);
+    const [isPortrait, setIsPortrait] = useState(true); // State to track aspect ratio
     const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
     const containerRef = useRef(null);
     const { onCardClose, currentIndex } = useContext(CarouselContext);
@@ -179,6 +180,7 @@ export const Card = ({
     const handleImageLoad = (e) => {
         const { naturalWidth, naturalHeight } = e.target;
         setImageDimensions({ width: naturalWidth, height: naturalHeight });
+        setIsPortrait(naturalHeight > naturalWidth);
     };
 
     return (
@@ -225,7 +227,7 @@ export const Card = ({
                 onClick={handleOpen}
                 className={cn(
                     "rounded-3xl bg-gray-100 dark:bg-neutral-900 overflow-hidden flex flex-col items-start justify-start relative z-10",
-                    "h-64 w-56 md:h-[32rem] md:w-96"
+                    isPortrait ? "h-64 w-56 md:h-[32rem] md:w-96" : "h-56 w-96 md:h-72 md:w-[48rem]"
                 )}
             >
                 <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
