@@ -14,7 +14,7 @@ export default function Home() {
     {
       category: "Project 2",
       title: "Awesome Website",
-      src: "/placeholder-image-2.jpg",
+      src: "/dt.png",
       content: "This is a placeholder for Project 2 content."
     },
     {

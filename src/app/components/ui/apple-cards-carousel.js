@@ -144,6 +144,7 @@ export const Card = ({
     layout = false,
 }) => {
     const [open, setOpen] = useState(false);
+    const [isPortrait, setIsPortrait] = useState(true);
     const containerRef = useRef(null);
     const { onCardClose, currentIndex } = useContext(CarouselContext);
 
@@ -173,6 +174,11 @@ export const Card = ({
     const handleClose = () => {
         setOpen(false);
         onCardClose(index);
+    };
+
+    const handleImageLoad = (e) => {
+        const { naturalWidth, naturalHeight } = e.target;
+        setIsPortrait(naturalHeight > naturalWidth);
     };
 
     return (
@@ -220,7 +226,10 @@ export const Card = ({
             <motion.button
                 layoutId={layout ? `card-${card.title}` : undefined}
                 onClick={handleOpen}
-                className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-64 w-56 md:h-[32rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
+                className={cn(
+                    "rounded-3xl bg-gray-100 dark:bg-neutral-900 overflow-hidden flex flex-col items-start justify-start relative z-10",
+                    isPortrait ? "h-64 w-56 md:h-[32rem] md:w-96" : "h-56 w-96 md:h-72 md:w-[48rem]"
+                )}
             >
                 <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
                 <div className="relative z-40 p-8">
@@ -242,6 +251,7 @@ export const Card = ({
                     alt={card.title}
                     fill
                     className="object-cover absolute z-10 inset-0"
+                    onLoad={handleImageLoad} // Add the onLoad handler
                 />
             </motion.button>
         </>
@@ -254,6 +264,7 @@ export const BlurImage = ({
     src,
     className,
     alt,
+    onLoad, // Ensure onLoad is passed down
     ...rest
 }) => {
     const [isLoading, setLoading] = useState(true);
@@ -264,7 +275,10 @@ export const BlurImage = ({
                 isLoading ? "blur-sm" : "blur-0",
                 className
             )}
-            onLoad={() => setLoading(false)}
+            onLoad={(e) => {
+                setLoading(false);
+                if (onLoad) onLoad(e); // Call onLoad prop
+            }}
             src={src}
             width={width}
             height={height}
@@ -276,3 +290,4 @@ export const BlurImage = ({
         />
     );
 };
+
