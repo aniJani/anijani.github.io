@@ -178,16 +178,17 @@ export const Card = ({
             <motion.button
                 onClick={handleOpen}
                 className={cn(
-                    "rounded-3xl bg-gray-100 dark:bg-neutral-900 overflow-hidden flex flex-col items-start justify-start relative z-10",
-                    isLandscape ? "h-36 w-72 md:h-96 md:w-[36rem]" : "h-72 w-32 md:h-[36rem] md:w-64" // Different styles for landscape and portrait
+                    "rounded-3xl bg-black dark:bg-neutral-900 overflow-hidden flex flex-col items-start justify-start relative z-10 shadow-none border-none",
+                    isLandscape ? "h-36 w-72 md:h-96 md:w-[43rem]" : "h-72 w-32 md:h-[36rem] md:w-64" // Different styles for landscape and portrait
                 )}
             >
                 <BlurImage
                     src={card.src}
                     alt={card.title}
                     fill
-                    className="object-contain absolute z-10 inset-0"
+                    className="object-contain absolute z-10 inset-0 bg-black"
                     onLoad={handleImageLoad}
+                    style={{ backgroundColor: 'black' }}
                 />
                 <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full text-white z-20">
                     <h3 className="text-xl font-semibold">{card.title}</h3>

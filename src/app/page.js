@@ -38,6 +38,69 @@ export default function Home() {
       title: "",
       src: "/dt.png"
     },
+    {
+      category: "",
+      title: "",
+      src: "/dt2.png"
+    },
+    {
+      category: "",
+      title: "",
+      src: "/dt3.png"
+    },
+    {
+      category: "",
+      title: "",
+      src: "/dt4.png"
+    },
+    {
+      category: "",
+      title: "",
+      src: "/dt6.png"
+    },
+    {
+      category: "",
+      title: "",
+      src: "/dt7.png"
+    },
+    {
+      category: "",
+      title: "",
+      src: "/dt8.png"
+    },
+  ];
+
+  const carouselItems2 = [
+    {
+      category: "",
+      title: "",
+      src: "/Emoki (1).jpg"
+    },
+    {
+      category: "",
+      title: "",
+      src: "/Emoki (2).jpg"
+    },
+    {
+      category: "",
+      title: "",
+      src: "/Emoki (3).jpg"
+    },
+    {
+      category: "",
+      title: "",
+      src: "/Emoki (4).jpg"
+    },
+    {
+      category: "",
+      title: "",
+      src: "/Emoki (5).jpg"
+    },
+    {
+      category: "",
+      title: "",
+      src: "/Emoki (6).jpg"
+    },
   ];
   return (
     <main className="min-h-screen bg-black flex flex-col items-center p-4 w-full sm:p-14">
@@ -93,6 +156,12 @@ export default function Home() {
 
       <div className="max-w-5xl mt-10 flex justify-center w-full">
         <Carousel items={carouselItems1.map((item, index) => (
+          <Card key={index} card={item} index={index} layout={true} />
+        ))} />
+      </div>
+
+      <div className="max-w-5xl mt-10 flex justify-center w-full">
+        <Carousel items={carouselItems2.map((item, index) => (
           <Card key={index} card={item} index={index} layout={true} />
         ))} />
       </div>
