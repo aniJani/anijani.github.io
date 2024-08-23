@@ -54,7 +54,7 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
         <CarouselContext.Provider value={{}}>
             <div className="relative w-full">
                 <div
-                    className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
+                    className="flex w-full overflow-x-scroll overscroll-x-auto py-1 md:py-1 scroll-smooth [scrollbar-width:none]"
                     ref={carouselRef}
                     onScroll={checkScrollability}
                 >
