@@ -144,7 +144,7 @@ export const Card = ({
     layout = false,
 }) => {
     const [open, setOpen] = useState(false);
-    const [isPortrait, setIsPortrait] = useState(true);
+    const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
     const containerRef = useRef(null);
     const { onCardClose, currentIndex } = useContext(CarouselContext);
 
@@ -178,14 +178,14 @@ export const Card = ({
 
     const handleImageLoad = (e) => {
         const { naturalWidth, naturalHeight } = e.target;
-        setIsPortrait(naturalHeight > naturalWidth);
+        setImageDimensions({ width: naturalWidth, height: naturalHeight });
     };
 
     return (
         <>
             <AnimatePresence>
                 {open && (
-                    <div className="fixed inset-0 h-screen z-50 overflow-auto">
+                    <div className="fixed inset-0 h-screen z-50 overflow-auto flex items-center justify-center">
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -198,7 +198,7 @@ export const Card = ({
                             exit={{ opacity: 0 }}
                             ref={containerRef}
                             layoutId={layout ? `card-${card.title}` : undefined}
-                            className="max-w-5xl mx-auto bg-transparent h-fit z-[60] my-10 p-4 md:p-10 relative"
+                            className="relative z-[60] max-h-screen max-w-screen p-4"
                         >
                             <button
                                 className="absolute top-4 right-4 h-8 w-8 bg-black dark:bg-white rounded-full flex items-center justify-center z-50"
@@ -206,14 +206,16 @@ export const Card = ({
                             >
                                 <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
                             </button>
-                            <Image
-                                src={card.src}
-                                alt={card.title}
-                                layout="responsive"
-                                width={isPortrait ? 400 : 800}
-                                height={isPortrait ? 600 : 450}
-                                className="rounded-3xl"
-                            />
+                            {imageDimensions.width > 0 && imageDimensions.height > 0 && (
+                                <Image
+                                    src={card.src}
+                                    alt={card.title}
+                                    width={imageDimensions.width}
+                                    height={imageDimensions.height}
+                                    className="rounded-3xl object-contain max-h-[calc(100vh-2rem)] max-w-[calc(100vw-2rem)]"
+                                    onLoad={handleImageLoad}
+                                />
+                            )}
                         </motion.div>
                     </div>
                 )}
@@ -223,7 +225,7 @@ export const Card = ({
                 onClick={handleOpen}
                 className={cn(
                     "rounded-3xl bg-gray-100 dark:bg-neutral-900 overflow-hidden flex flex-col items-start justify-start relative z-10",
-                    isPortrait ? "h-64 w-56 md:h-[32rem] md:w-96" : "h-56 w-96 md:h-72 md:w-[48rem]"
+                    "h-64 w-56 md:h-[32rem] md:w-96"
                 )}
             >
                 <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
@@ -246,12 +248,13 @@ export const Card = ({
                     alt={card.title}
                     fill
                     className="object-cover absolute z-10 inset-0"
-                    onLoad={handleImageLoad} // Add the onLoad handler
+                    onLoad={handleImageLoad}
                 />
             </motion.button>
         </>
     );
 };
+
 
 
 export const BlurImage = ({
