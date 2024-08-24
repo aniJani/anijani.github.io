@@ -3,10 +3,10 @@ name: Deploy Next.js to GitHub Pages
 on:
   push:
     branches:
-      - master  # Set this to your default branch name
+      - master   
   pull_request:
     branches:
-      - master
+      - master   
 
 jobs:
   build-and-deploy:
@@ -20,9 +20,6 @@ jobs:
 
       - name: Build the Next.js project
         run: npm run build
-
-      - name: Export the project to static HTML
-        run: npm run export
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
