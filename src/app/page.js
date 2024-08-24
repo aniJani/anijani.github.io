@@ -105,7 +105,7 @@ export default function Home() {
 
         <section id="projects-section" className="w-full max-w-5xl mt-20">
           <div className="flex items-start mb-12">
-            <h2 className="text-4xl font-bold text-white text-left mr-8">Projects</h2>
+            <h2 className="text-4xl font-bold text-white text-left mr-8">Projects:</h2>
             <div className="text-gray-400 text-sm">
               <ul className="space-y-2">
                 <li>
@@ -131,9 +131,9 @@ export default function Home() {
           </div>
 
           {/* The Designer's Touch */}
-          <div id="designers-touch" className="mb-12 scroll-mt-20">
+          <div id="designers-touch" className="mb-2 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">The Designer's Touch</h3>
-            <p className="text-gray-300">A creative platform where users can design custom t-shirts and other merchandise, with a real-time 3D preview.</p>
+            <p className="text-gray-300">A creative platform where users can design custom t-shirts and other merchandise, with a real-time 3D preview. The website is currently live at <a href="https://thedesignerstouch.com.np/" className="text-blue-500 hover:underline"> www.thedesignerstouch.com.np</a>.</p>
             <Carousel items={carouselItems1.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
