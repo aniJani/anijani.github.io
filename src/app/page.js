@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 "use client"
 import { Github, Linkedin } from 'lucide-react';
 import Image from 'next/image';
