@@ -74,9 +74,9 @@ export default function Home() {
               <Image
                 src="/rajkarnikar_portfolio/Headshot1.png"
                 alt="Descriptive alt text"
-                width={290}
-                height={230}
-                className="mx-auto object-contain rounded-lg shadow-lg"
+                width={320}
+                height={260}
+                className="mx-auto object-contain rounded-lg shadow-lg sm:w-80 sm:h-64 w-64 h-52"
               />
               <div className="mt-4 space-y-2">
                 <a href="https://www.linkedin.com/in/janit-rajkarnikar-18b2782b1/" className="flex items-center justify-center text-gray-300 hover:text-white">
@@ -92,13 +92,13 @@ export default function Home() {
           </div>
 
           <div className="w-full md:w-auto text-center md:text-left md:ml-10 md:mt-20">
-            <div className="mt-8 text-white max-w-xl">
-              <h1 className="text-5xl font-bold">Hi, I'm Janit.</h1>
-              <p className="mt-4 text-lg">
+            <div className="mt-0 sm:mt-8 text-white max-w-xl">
+              <h1 className="text-2xl sm:text-5xl font-bold">Hi, I'm Janit.</h1>
+              <p className="mt-1 sm:mt-4 text-lg">
                 I'm in my second year of undergrad, majoring in <span className="font-semibold text-white">Computer Science</span> with a minor in <span className="font-semibold text-white">Economic Data Analysis</span>.
                 I have hands-on experience with Machine Learning techniques and enjoy working on applicaitons that leverage data-driven insights to solve real-world problems.
               </p>
-              <p className="mt-4 text-lg">
+              <p className="mt-1 sm:mt-4 text-lg">
                 I'm also interested in research, particularly in cybersecurity, where I'm delving into key challenges and contributing to the development of practical solutions.
               </p>
             </div>
