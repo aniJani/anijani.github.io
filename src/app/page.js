@@ -9,30 +9,30 @@ import { Card, Carousel } from "./components/ui/apple-cards-carousel";
 
 export default function Home() {
   const carouselItems = [
-    { category: "", title: "", src: "/CalorieTracker (2).jpg" },
-    { category: "", title: "", src: "/CalorieTracker (3).jpg" },
-    { category: "", title: "", src: "/CalorieTracker (1).jpg" },
-    { category: "", title: "", src: "/CalorieTracker (5).jpg" },
-    { category: "", title: "", src: "/CalorieTracker (4).jpg" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/CalorieTracker (2).jpg" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/CalorieTracker (3).jpg" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/CalorieTracker (1).jpg" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/CalorieTracker (5).jpg" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/CalorieTracker (4).jpg" },
   ];
 
   const carouselItems1 = [
-    { category: "", title: "", src: "/dt.png" },
-    { category: "", title: "", src: "/dt2.png" },
-    { category: "", title: "", src: "/dt3.png" },
-    { category: "", title: "", src: "/dt4.png" },
-    { category: "", title: "", src: "/dt6.png" },
-    { category: "", title: "", src: "/dt7.png" },
-    { category: "", title: "", src: "/dt8.png" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/dt.png" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/dt2.png" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/dt3.png" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/dt4.png" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/dt6.png" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/dt7.png" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/dt8.png" },
   ];
 
   const carouselItems2 = [
-    { category: "", title: "", src: "/Emoki (1).jpg" },
-    { category: "", title: "", src: "/Emoki (2).jpg" },
-    { category: "", title: "", src: "/Emoki (3).jpg" },
-    { category: "", title: "", src: "/Emoki (4).jpg" },
-    { category: "", title: "", src: "/Emoki (5).jpg" },
-    { category: "", title: "", src: "/Emoki (6).jpg" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/Emoki (1).jpg" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/Emoki (2).jpg" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/Emoki (3).jpg" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/Emoki (4).jpg" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/Emoki (5).jpg" },
+    { category: "", title: "", src: "/rajkarnikar_portfolio/Emoki (6).jpg" },
   ];
   //.
   useEffect(() => {
@@ -72,7 +72,7 @@ export default function Home() {
             </div>
             <div className="mt-8">
               <Image
-                src="/Headshot1.png"
+                src="/rajkarnikar_portfolio/Headshot1.png"
                 alt="Descriptive alt text"
                 width={290}
                 height={230}
