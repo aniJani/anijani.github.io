@@ -34,7 +34,7 @@ export default function Home() {
     { category: "", title: "", src: "/Emoki (5).jpg" },
     { category: "", title: "", src: "/Emoki (6).jpg" },
   ];
-
+  //.
   useEffect(() => {
     const handleClick = (e) => {
       e.preventDefault();
