@@ -79,7 +79,7 @@ export default function Home() {
                 className="mx-auto object-contain rounded-lg shadow-lg sm:w-80 sm:h-64 w-64 h-52"
               />
               <div className="mt-4 space-y-2">
-                <a href="https://www.linkedin.com/in/janit-rajkarnikar-18b2782b1/" className="flex items-center justify-center text-gray-300 hover:text-white">
+                <a href="https://www.linkedin.com/in/janitrajkarnikar/" className="flex items-center justify-center text-gray-300 hover:text-white">
                   <Linkedin className="w-5 h-5 mr-2" />
                   LinkedIn
                 </a>
