@@ -23,7 +23,7 @@ const CV = () => {
             `}</style>
             <div className="w-full p-4 sm:p-14">
                 <div className="max-w-4xl mx-auto">
-                    <div className="flex justify-start mb-8">
+                    <div className="flex justify-center sm:justify-start mb-8">
                         <div className="flex justify-start items-start bg-black">
                             <div className="flex flex-row border-2 border-white p-4 bg-black md:ml-[22px]">
                                 <div
