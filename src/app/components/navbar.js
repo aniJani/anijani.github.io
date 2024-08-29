@@ -1,13 +1,20 @@
 "use client";
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const Navbar = () => {
+    const router = useRouter();
+
     const scrollToProjects = (e) => {
         e.preventDefault();
         const projectsSection = document.getElementById('projects-section');
         if (projectsSection) {
             projectsSection.scrollIntoView({ behavior: 'smooth' });
         }
+    };
+
+    const navigateToResume = () => {
+        router.push('../../CV');
     };
 
     return (
@@ -19,7 +26,8 @@ const Navbar = () => {
                 >
                     Projects
                 </div>
-                <div className="text-white font-bold text-l uppercase tracking-wider cursor-pointer hover:bg-gray-800 px-4 py-2">CV</div>
+                <div onClick={navigateToResume}
+                    className="text-white font-bold text-l uppercase tracking-wider cursor-pointer hover:bg-gray-800 px-4 py-2">CV</div>
             </div>
         </div>
     );
