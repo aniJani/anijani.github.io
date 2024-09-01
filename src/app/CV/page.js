@@ -1,9 +1,19 @@
 "use client";
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const CV = () => {
     const router = useRouter();
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const navigateToHome = () => {
         router.push('/');
@@ -37,11 +47,22 @@ const CV = () => {
                     </div>
                     <div className="cv-wrapper flex-auto w-full h-[calc(100vh-200px)] md:h-[calc(100vh-100px)]">
                         <div className="relative w-full h-full">
-                            <iframe
-                                src="/JanitRajkarnikarResume24.pdf"
-                                className="absolute top-0 left-0 w-full h-full"
-                                style={{ border: 'none' }}
-                            ></iframe>
+                            {isMobile ? (
+                                <object
+                                    data="/JanitRajkarnikarResume24.pdf"
+                                    type="application/pdf"
+                                    className="absolute top-0 left-0 w-full h-full"
+                                >
+                                    <p>Your browser does not support PDFs.
+                                        <a href="/JanitRajkarnikarResume24.pdf">Download the PDF</a>.</p>
+                                </object>
+                            ) : (
+                                <iframe
+                                    src="/JanitRajkarnikarResume24.pdf"
+                                    className="absolute top-0 left-0 w-full h-full"
+                                    style={{ border: 'none' }}
+                                ></iframe>
+                            )}
                         </div>
                     </div>
                 </div>
