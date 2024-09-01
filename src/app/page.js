@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 "use client"
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import Navbar from "./components/navbar";
@@ -86,6 +86,10 @@ export default function Home() {
                 <a href="https://github.com/aniJani" className="flex items-center justify-center text-gray-300 hover:text-white">
                   <Github className="w-5 h-5 mr-2" />
                   Github
+                </a>
+                <a href="mailto:rajkarnikarjanit@gmail.com" className="flex items-center justify-center text-gray-300 hover:text-white">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Mail
                 </a>
               </div>
             </div>
