@@ -1,21 +1,9 @@
 "use client";
-
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const CV = () => {
     const router = useRouter();
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
-    }, []);
 
     const navigateToHome = () => {
         router.push('/');
@@ -48,38 +36,29 @@ const CV = () => {
                         </div>
                     </div>
                     <div className="cv-wrapper flex-auto w-full h-[calc(100vh-200px)] md:h-[calc(100vh-100px)]">
-                        {isMobile ? (
-                            <div className="text-white text-center p-4">
-                                <p>If the PDF is not visible please download it. Thanks!</p>
-                                <a
-                                    href="/JanitRajkarnikarResume24.pdf"
-                                    download
-                                    className="mt-4 inline-block bg-white text-black font-bold py-2 px-4 rounded"
-                                >
-                                    Download CV
-                                </a>
-                            </div>
-                        ) : (
-                            <embed
+                        <div className="relative w-full h-full">
+                            <iframe
                                 src="/JanitRajkarnikarResume24.pdf"
-                                type="application/pdf"
-                                className="cv-embed w-full h-full border-gray-700 rounded-lg"
-                            />
-                        )}
+                                className="absolute top-0 left-0 w-full h-full"
+                                style={{ border: 'none' }}
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div className="fixed bottom-4 left-0 right-0 text-center">
+                <a
+                    href="/JanitRajkarnikarResume24.pdf"
+                    download
+                    className="inline-block bg-white text-black font-bold py-2 px-4 rounded hover:bg-gray-200 transition-colors duration-200"
+                >
+                    Download CV
+                </a>
             </div>
             <style jsx>{`
                 .cv-wrapper {
                     padding: 0;
                     margin: 0;
-                }
-                .cv-embed {
-                    padding: 0;
-                    margin: 0;
-                    border: none;
-                    width: 100%;
-                    height: 100%;
                 }
             `}</style>
         </div>
