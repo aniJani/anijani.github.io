@@ -48,7 +48,7 @@ const CV = () => {
             </div>
             <div className="fixed bottom-4 left-0 right-0 text-center">
                 <a
-                    href="/JanitRajkarnikarResume24.pdf"
+                    href="/JanitRajkarnikarResume2024 (1).pdf"
                     download
                     className="inline-block bg-white text-black font-bold py-2 px-4 rounded hover:bg-gray-200 transition-colors duration-200"
                 >
