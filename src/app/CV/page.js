@@ -38,7 +38,7 @@ const CV = () => {
                     <div className="cv-wrapper flex-auto w-full h-[calc(100vh-200px)] md:h-[calc(100vh-100px)]">
                         <div className="relative w-full h-full">
                             <iframe
-                                src="/JanitRajkarnikarResume24.pdf"
+                                src="/JanitRajkarnikarResume2024 (1).pdf"
                                 className="absolute top-0 left-0 w-full h-full"
                                 style={{ border: 'none' }}
                             ></iframe>
