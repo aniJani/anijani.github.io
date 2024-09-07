@@ -34,7 +34,13 @@ export default function Home() {
     { category: "", title: "", src: "/Emoki (5).jpg" },
     { category: "", title: "", src: "/Emoki (6).jpg" },
   ];
-  //.
+
+  const TheDesignersTouchTechStack = ["React", "Node.js", "Three.js", "Express", "Firebase", "AWS"]; // Example placeholder tech stack
+  const EmokiTechStack = ["React Native", "Node.js", "SQLite", "Express", "Flask", "Firebase", "MongoDB"]; // Example placeholder tech stack
+  const CalorieTrackerTechStack = ["React Native", "Node.js", "SQLite"]; // Example placeholder tech stack
+
+
+
   useEffect(() => {
     const handleClick = (e) => {
       e.preventDefault();
@@ -100,7 +106,7 @@ export default function Home() {
               <h1 className="text-2xl sm:text-5xl font-bold">Hi, I'm Janit.</h1>
               <p className="mt-1 sm:mt-4 text-lg">
                 I'm in my second year of undergrad, majoring in <span className="font-semibold text-white">Computer Science</span> with a minor in <span className="font-semibold text-white">Economic Data Analysis</span>.
-                I have hands-on experience with Machine Learning techniques and enjoy working on applicaitons that leverage data-driven insights to solve real-world problems.
+                I have hands-on experience with Machine Learning techniques and enjoy working on applications that leverage data-driven insights to solve real-world problems.
               </p>
               <p className="mt-1 sm:mt-4 text-lg">
                 I'm also interested in research, particularly in cybersecurity, where I'm delving into key challenges and contributing to the development of practical solutions.
@@ -130,6 +136,17 @@ export default function Home() {
           {/* Calorie Tracker */}
           <div id="calorie-tracker" className="mb-12 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">Calorie Tracker</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {CalorieTrackerTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
             <p className="text-gray-300 mb-2">A mobile app with a very simple interface that helps users track their daily calorie intake.</p>
             <Carousel items={carouselItems.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
@@ -139,6 +156,17 @@ export default function Home() {
           {/* The Designer's Touch */}
           <div id="designers-touch" className="mb-2 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">The Designer's Touch</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {TheDesignersTouchTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
             <p className="text-gray-300">A creative platform where users can design custom t-shirts and other merchandise, with a real-time 3D preview. The website is currently live at <a href="https://thedesignerstouch.com.np/" className="text-blue-500 hover:underline"> www.thedesignerstouch.com.np</a>.</p>
             <Carousel items={carouselItems1.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
@@ -148,6 +176,17 @@ export default function Home() {
           {/* Emoki */}
           <div id="emoki" className="mb-12 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">Emoki</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {EmokiTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
             <p className="text-gray-300 mb-2">An emotion tracking app that aggregates users' emotions over time, helping them understand their emotional patterns.</p>
             <Carousel items={carouselItems2.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
