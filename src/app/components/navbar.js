@@ -24,7 +24,7 @@ const Navbar = () => {
                     Projects
                 </button>
                 <Link
-                    href="/resume.pdf"
+                    href="/Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white font-bold text-l uppercase tracking-wider cursor-pointer hover:bg-gray-800 px-4 py-2"
