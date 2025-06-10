@@ -35,11 +35,32 @@ export default function Home() {
     { category: "", title: "", src: "/Emoki (6).jpg" },
   ];
 
-  const TheDesignersTouchTechStack = ["React", "Node.js", "Three.js", "Express", "Firebase", "AWS"]; // Example placeholder tech stack
-  const EmokiTechStack = ["React Native", "Node.js", "SQLite", "Express", "Flask", "Firebase", "MongoDB"]; // Example placeholder tech stack
-  const CalorieTrackerTechStack = ["React Native", "Node.js", "SQLite"]; // Example placeholder tech stack
+  const carouselItems3 = [
+    { category: "", title: "", src: "/infolaya1.png" },
+    { category: "", title: "", src: "/infolaya2.png" },
+    { category: "", title: "", src: "/infolaya3.png" },
+  ];
 
+  const carouselItems4 = [
+    { category: "", title: "", src: "/baagchal1.png" },
+    { category: "", title: "", src: "/baagchal2.png" },
+    { category: "", title: "", src: "/baagchal3.png" },
+    { category: "", title: "", src: "/baagchal4.png" },
+  ];
 
+  const carouselItems5 = [
+    { category: "", title: "", src: "/gtn1.png" },
+    { category: "", title: "", src: "/gtn2.png" },
+    { category: "", title: "", src: "/gtn3.png" },
+    { category: "", title: "", src: "/gtn4.png" },
+  ];
+
+  const TheDesignersTouchTechStack = ["React", "Node.js", "Three.js", "Express", "Firebase", "AWS"];
+  const EmokiTechStack = ["React Native", "Node.js", "SQLite", "Express", "Flask", "Firebase", "MongoDB"];
+  const CalorieTrackerTechStack = ["React Native", "Node.js", "SQLite"];
+  const InfolayaTechStack = ["Next.js", "Node.js", "FastAPI", "MongoDB", "Firebase"];
+  const BaagchalTechStack = ["Next.js", "Node.js", "Socket.io", "MongoDB", "Azure"];
+  const GTNTechStack = ["Next.js", "Node.js", "MongoDB"];
 
   useEffect(() => {
     const handleClick = (e) => {
@@ -93,7 +114,7 @@ export default function Home() {
                   <Github className="w-5 h-5 mr-2" />
                   Github
                 </a>
-                <a href="mailto:rajkarnikarjanit@gmail.com" className="flex items-center justify-center text-gray-300 hover:text-white">
+                <a href="mailto:rajkarnikarjanit22@gmail.com" className="flex items-center justify-center text-gray-300 hover:text-white">
                   <Mail className="w-5 h-5 mr-2" />
                   Mail
                 </a>
@@ -105,7 +126,7 @@ export default function Home() {
             <div className="mt-0 sm:mt-8 text-white max-w-xl">
               <h1 className="text-2xl sm:text-5xl font-bold">Hi, I'm Janit.</h1>
               <p className="mt-1 sm:mt-4 text-lg">
-                I'm in my second year of undergrad, majoring in <span className="font-semibold text-white">Computer Science</span> with a minor in <span className="font-semibold text-white">Economic Data Analysis</span>.
+                I'm in my third year of undergrad, majoring in <span className="font-semibold text-white">Computer Science</span> with minors in <span className="font-semibold text-white">Economic Data Analysis</span> and <span className="font-semibold text-white">Mathematics</span>.
                 I have hands-on experience with Machine Learning techniques and enjoy working on applications that leverage data-driven insights to solve real-world problems.
               </p>
               <p className="mt-1 sm:mt-4 text-lg">
@@ -121,38 +142,27 @@ export default function Home() {
             <div className="text-gray-400 text-sm">
               <ul className="space-y-2">
                 <li>
-                  <a href="#calorie-tracker" className="hover:underline transition-all duration-300 ease-in-out">1. Calorie Tracker</a>
+                  <a href="#designers-touch" className="hover:underline transition-all duration-300 ease-in-out">1. The Designer's Touch</a>
                 </li>
                 <li>
-                  <a href="#designers-touch" className="hover:underline transition-all duration-300 ease-in-out">2. The Designer's Touch</a>
+                  <a href="#emoki" className="hover:underline transition-all duration-300 ease-in-out">2. Emoki</a>
                 </li>
                 <li>
-                  <a href="#emoki" className="hover:underline transition-all duration-300 ease-in-out">3. Emoki</a>
+                  <a href="#baagchal" className="hover:underline transition-all duration-300 ease-in-out">3. Baagchal</a>
+                </li>
+                <li>
+                  <a href="#gtn" className="hover:underline transition-all duration-300 ease-in-out">4. Guess The Nepali</a>
+                </li>
+                <li>
+                  <a href="#infolaya" className="hover:underline transition-all duration-300 ease-in-out">5. Infolaya</a>
+                </li>
+
+                <li>
+                  <a href="#calorie-tracker" className="hover:underline transition-all duration-300 ease-in-out">6. Calorie Tracker</a>
                 </li>
               </ul>
             </div>
           </div>
-
-          {/* Calorie Tracker */}
-          <div id="calorie-tracker" className="mb-12 scroll-mt-20">
-            <h3 className="text-2xl font-semibold text-white mb-2">Calorie Tracker</h3>
-            {/* Tech Stack */}
-            <div className="flex flex-wrap gap-1 mb-4">
-              {CalorieTrackerTechStack.map((tech, index) => (
-                <span
-                  key={index}
-                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <p className="text-gray-300 mb-2">A mobile app with a very simple interface that helps users track their daily calorie intake.</p>
-            <Carousel items={carouselItems.map((item, index) => (
-              <Card key={index} card={item} index={index} layout={true} />
-            ))} />
-          </div>
-
           {/* The Designer's Touch */}
           <div id="designers-touch" className="mb-2 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">The Designer's Touch</h3>
@@ -167,7 +177,7 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <p className="text-gray-300">A creative platform where users can design custom t-shirts and other merchandise, with a real-time 3D preview. The website is currently live at <a href="https://thedesignerstouch.com.np/" className="text-blue-500 hover:underline"> www.thedesignerstouch.com.np</a>.</p>
+            <p className="text-gray-300">A creative platform where users can design custom t-shirts and other merchandise, with a real-time 3D preview. </p>
             <Carousel items={carouselItems1.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
@@ -189,6 +199,85 @@ export default function Home() {
             </div>
             <p className="text-gray-300 mb-2">An emotion tracking app that aggregates users' emotions over time, helping them understand their emotional patterns.</p>
             <Carousel items={carouselItems2.map((item, index) => (
+              <Card key={index} card={item} index={index} layout={true} />
+            ))} />
+          </div>
+          {/* Baagchal */}
+          <div id="baagchal" className="mb-12 scroll-mt-20">
+            <h3 className="text-2xl font-semibold text-white mb-2">Baagchal</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {BaagchalTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <p className="text-gray-300 mb-2">A digital implementation of the traditional Nepali board game Baagchal, featuring multiplayer functionality and real-time gameplay. The website is currently live at <a href="https://www.baagchal.com/" className="text-blue-500 hover:underline"> www.baagchal.com</a>.</p>
+            <Carousel items={carouselItems4.map((item, index) => (
+              <Card key={index} card={item} index={index} layout={true} />
+            ))} />
+          </div>
+          {/* Guess The Nepali */}
+          <div id="gtn" className="mb-12 scroll-mt-20">
+            <h3 className="text-2xl font-semibold text-white mb-2">Guess The Nepali</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {GTNTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <p className="text-gray-300 mb-2">A fun and interactive game that challenges players to guess Nepali people's ethnicities. Made as a tribute to the cultural diversity in Nepal. The website is currently live at <a href="https://www.guessthenepali.com/" className="text-blue-500 hover:underline"> www.guessthenepali.com</a>.</p>
+            <Carousel items={carouselItems5.map((item, index) => (
+              <Card key={index} card={item} index={index} layout={true} />
+            ))} />
+          </div>
+
+          {/* Infolaya */}
+          <div id="infolaya" className="mb-12 scroll-mt-20">
+            <h3 className="text-2xl font-semibold text-white mb-2">Infolaya</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {InfolayaTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <p className="text-gray-300 mb-2">A no code Data Processing and Visualization platform that transforms complex data into recommendations and insights allowing users with no technical expertise to easily analyze and visualize their data. The website is currently live at <a href="https://www.infolaya.tech/" className="text-blue-500 hover:underline"> www.infolaya.tech</a>.</p>
+            <Carousel items={carouselItems3.map((item, index) => (
+              <Card key={index} card={item} index={index} layout={true} />
+            ))} />
+          </div>
+
+
+          {/* Calorie Tracker */}
+          <div id="calorie-tracker" className="mb-12 scroll-mt-20">
+            <h3 className="text-2xl font-semibold text-white mb-2">Calorie Tracker</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {CalorieTrackerTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <p className="text-gray-300 mb-2">A mobile app with a very simple interface that helps users track their daily calorie intake.</p>
+            <Carousel items={carouselItems.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
           </div>
