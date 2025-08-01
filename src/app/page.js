@@ -55,12 +55,29 @@ export default function Home() {
     { category: "", title: "", src: "/gtn4.png" },
   ];
 
+  const carouselItems6 = [
+    { category: "", title: "", src: "/ponpon1.png" },
+    { category: "", title: "", src: "/ponpon2.png" },
+    { category: "", title: "", src: "/ponpon3.png" },
+    { category: "", title: "", src: "/ponpon4.png" },
+  ];
+
+  const carouselItems7 = [
+    { category: "", title: "", src: "/spr1.png" },
+    { category: "", title: "", src: "/spr2.png" },
+    { category: "", title: "", src: "/spr3.png" },
+    { category: "", title: "", src: "/spr4.png" },
+    { category: "", title: "", src: "/spr5.png" },
+  ];
+
   const TheDesignersTouchTechStack = ["React", "Node.js", "Three.js", "Express", "Firebase", "AWS"];
   const EmokiTechStack = ["React Native", "Node.js", "SQLite", "Express", "Flask", "Firebase", "MongoDB"];
   const CalorieTrackerTechStack = ["React Native", "Node.js", "SQLite"];
   const InfolayaTechStack = ["Next.js", "Node.js", "FastAPI", "MongoDB", "Firebase"];
   const BaagchalTechStack = ["Next.js", "Node.js", "Socket.io", "MongoDB", "Azure"];
   const GTNTechStack = ["Next.js", "Node.js", "MongoDB"];
+  const PonPonTechStack = ["React", "TypeScript", "Tauri", "Node.js"];
+  const SpeedReaderTrainerTechStack = ["Next.js", "Node.js"];
 
   useEffect(() => {
     const handleClick = (e) => {
@@ -154,11 +171,16 @@ export default function Home() {
                   <a href="#gtn" className="hover:underline transition-all duration-300 ease-in-out">4. Guess The Nepali</a>
                 </li>
                 <li>
-                  <a href="#infolaya" className="hover:underline transition-all duration-300 ease-in-out">5. Infolaya</a>
+                  <a href="#ponpon" className="hover:underline transition-all duration-300 ease-in-out">5. PonPon</a>
                 </li>
-
                 <li>
-                  <a href="#calorie-tracker" className="hover:underline transition-all duration-300 ease-in-out">6. Calorie Tracker</a>
+                  <a href="#speed-reader-trainer" className="hover:underline transition-all duration-300 ease-in-out">6. Speed Reader Trainer</a>
+                </li>
+                <li>
+                  <a href="#infolaya" className="hover:underline transition-all duration-300 ease-in-out">7. Infolaya</a>
+                </li>
+                <li>
+                  <a href="#calorie-tracker" className="hover:underline transition-all duration-300 ease-in-out">8. Calorie Tracker</a>
                 </li>
               </ul>
             </div>
@@ -240,7 +262,45 @@ export default function Home() {
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
           </div>
+          {/* PonPon */}
+          <div id="ponpon" className="mb-12 scroll-mt-20">
+            <h3 className="text-2xl font-semibold text-white mb-2">PonPon</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {PonPonTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <p className="text-gray-300 mb-2">A small and cute pomodoro timer that occupies a small portion of your screen. The code is available at <a href="https://github.com/aniJani/PonPon" className="text-blue-500 hover:underline"> https://github.com/aniJani/PonPon</a>.</p>
+            <Carousel items={carouselItems6.map((item, index) => (
+              <Card key={index} card={item} index={index} layout={true} />
+            ))} />
+          </div>
+          {/* Speed reader trainer */}
+          <div id="speed-reader-trainer" className="mb-12 scroll-mt-20">
+            <h3 className="text-2xl font-semibold text-white mb-2">Speed Reader Trainer</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {SpeedReaderTrainerTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+              <p className="text-gray-300 mb-2">A speed reading trainer that helps users improve their reading speed and comprehension. The website is live at <a href="https://speed-reader-trainer.vercel.app/" className="text-blue-500 hover:underline"> https://speed-reader-trainer.vercel.app/</a>.</p>
+              <Carousel items={carouselItems7.map((item, index) => (
+                <Card key={index} card={item} index={index} layout={true} />
+              ))} />
+            </div>
 
+          </div>
           {/* Infolaya */}
           <div id="infolaya" className="mb-12 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">Infolaya</h3>
