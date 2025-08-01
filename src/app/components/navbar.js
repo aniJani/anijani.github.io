@@ -24,6 +24,12 @@ const Navbar = () => {
                     Projects
                 </button>
                 <Link
+                    href="#publications-section"
+                    className="text-white font-bold text-l uppercase tracking-wider cursor-pointer hover:bg-gray-800 px-4 py-2"
+                >
+                    Publication
+                </Link>
+                <Link
                     href="/Janit Rajkarnikar.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -31,6 +37,7 @@ const Navbar = () => {
                 >
                     CV
                 </Link>
+
             </div>
         </nav>
     );

@@ -342,6 +342,27 @@ export default function Home() {
             ))} />
           </div>
         </section>
+
+        {/* Publications Section */}
+        <section id="publications-section" className="w-full max-w-5xl mt-10">
+          <h2 className="text-4xl font-bold text-white text-left mb-4">Publications:</h2>
+          <div >
+            <div className="text-white">
+              <p className="text-lg mb-2">
+                <span className="font-semibold">Divine Precious-Esue, Janit Rajkarnikar, Brian Bellrose, et al.</span>
+              </p>
+              <p className="text-xl font-medium mb-3 text-blue-400">
+                Ensemble Machine Learning Approach to Phishing Website Detection
+              </p>
+              <p className="text-gray-300 mb-2">
+                <span className="italic">Computers and Their Applications (CATA), Springer CCIS, 2025</span>
+              </p>
+              <p className="text-gray-400 text-sm">
+                DOI: <a href="https://doi.org/10.1007/978-3-031-92178-0_8" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">10.1007/978-3-031-92178-0_8</a>
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
