@@ -16,28 +16,27 @@ const Navbar = () => {
 
     return (
         <nav className="flex justify-start items-start bg-black">
-            <div className="flex flex-row border-2 border-white p-4 bg-black">
+            <div className="flex flex-row gap-1 bg-black">
+                <Link
+                    href="#publications-section"
+                    className="text-white/80 font-medium text-sm uppercase tracking-wider cursor-pointer px-4 py-2 hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-4 after:right-4 after:h-px after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
+                >
+                    Publications
+                </Link>
                 <button
                     onClick={scrollToProjects}
-                    className="text-white font-bold text-l uppercase tracking-wider cursor-pointer hover:bg-gray-800 px-4 py-2"
+                    className="text-white/80 font-medium text-sm uppercase tracking-wider cursor-pointer px-4 py-2 hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-4 after:right-4 after:h-px after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
                 >
                     Projects
                 </button>
                 <Link
-                    href="#publications-section"
-                    className="text-white font-bold text-l uppercase tracking-wider cursor-pointer hover:bg-gray-800 px-4 py-2"
-                >
-                    Publications
-                </Link>
-                <Link
                     href="/JanitRajkarnikarPitt.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white font-bold text-l uppercase tracking-wider cursor-pointer hover:bg-gray-800 px-4 py-2"
+                    className="text-white/80 font-medium text-sm uppercase tracking-wider cursor-pointer px-4 py-2 hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-4 after:right-4 after:h-px after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
                 >
                     CV
                 </Link>
-
             </div>
         </nav>
     );

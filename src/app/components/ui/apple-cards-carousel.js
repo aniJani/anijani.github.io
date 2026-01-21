@@ -177,8 +177,10 @@ export const Card = ({
             </AnimatePresence>
             <motion.button
                 onClick={handleOpen}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
                 className={cn(
-                    "rounded-3xl bg-black dark:bg-neutral-900 overflow-hidden flex flex-col items-start justify-start relative z-10 shadow-none border-none",
+                    "rounded-3xl bg-black dark:bg-neutral-900 overflow-hidden flex flex-col items-start justify-start relative z-10 shadow-none border-none cursor-pointer hover:shadow-lg hover:shadow-white/5 transition-shadow",
                     isLandscape ? "h-36 w-72 md:h-96 md:w-[43rem]" : "h-72 w-32 md:h-[36rem] md:w-64" // Different styles for landscape and portrait
                 )}
             >

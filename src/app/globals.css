@@ -31,3 +31,20 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus states for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* Subtle selection color */
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+}

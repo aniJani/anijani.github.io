@@ -136,17 +136,17 @@ export default function Home() {
                 height={260}
                 className="mx-auto object-contain rounded-lg shadow-lg sm:w-80 sm:h-64 w-64 h-52"
               />
-              <div className="mt-4 space-y-2">
-                <a href="https://www.linkedin.com/in/janitrajkarnikar/" className="flex items-center justify-center text-gray-300 hover:text-white">
-                  <Linkedin className="w-5 h-5 mr-2" />
+              <div className="mt-4 space-y-3">
+                <a href="https://www.linkedin.com/in/janitrajkarnikar/" className="flex items-center justify-center text-gray-300 hover:text-white transition-colors group">
+                  <Linkedin className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                   LinkedIn
                 </a>
-                <a href="https://github.com/aniJani" className="flex items-center justify-center text-gray-300 hover:text-white">
-                  <Github className="w-5 h-5 mr-2" />
+                <a href="https://github.com/aniJani" className="flex items-center justify-center text-gray-300 hover:text-white transition-colors group">
+                  <Github className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                   Github
                 </a>
-                <a href="mailto:rajkarnikarjanit22@gmail.com" className="flex items-center justify-center text-gray-300 hover:text-white">
-                  <Mail className="w-5 h-5 mr-2" />
+                <a href="mailto:rajkarnikarjanit22@gmail.com" className="flex items-center justify-center text-gray-300 hover:text-white transition-colors group">
+                  <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                   Mail
                 </a>
               </div>
@@ -167,7 +167,54 @@ export default function Home() {
           </div>
         </div>
 
-        <section id="projects-section" className="w-full max-w-5xl mt-20">
+        {/* Publications Section */}
+        <section id="publications-section" className="w-full max-w-5xl mt-20">
+          <h2 className="text-4xl font-bold text-white text-left mb-8">Publications:</h2>
+
+          <div className="space-y-6">
+            {/* First Author Paper */}
+            <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors">
+              <div className="text-white">
+                <p className="text-sm text-gray-400 mb-2 uppercase tracking-wide">First Author</p>
+                <p className="text-lg mb-2">
+                  <span className="font-semibold text-white">Janit Rajkarnikar</span><span className="text-gray-300">, N. Poudel, and N. Rahimi</span>
+                </p>
+                <p className="text-xl font-medium mb-3 text-blue-400 leading-relaxed">
+                  Unsupervised Anomaly Detection in OpenStack Logs via Fine-Tuned RoBERTa Embeddings
+                </p>
+                <p className="text-gray-300 mb-2">
+                  <span className="italic">Journal of Cybersecurity, Digital Forensics and Jurisprudence, vol. 1, pp. 9–21, 2025</span>
+                </p>
+                <p className="text-gray-400 text-sm">
+                  <a href="https://www.cdfjjournal.com/index.php/cdfj/article/view/3" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors">View Paper</a>
+                </p>
+              </div>
+            </div>
+
+            {/* Co-Author Paper */}
+            <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors">
+              <div className="text-white">
+                <p className="text-sm text-gray-400 mb-2 uppercase tracking-wide">Co-Author</p>
+                <p className="text-lg mb-2">
+                  <span className="text-gray-300">Divine Precious-Esue, </span><span className="font-semibold text-white">Janit Rajkarnikar</span><span className="text-gray-300">, Brian Bellrose, et al.</span>
+                </p>
+                <p className="text-xl font-medium mb-3 text-blue-400 leading-relaxed">
+                  Ensemble Machine Learning Approach to Phishing Website Detection
+                </p>
+                <p className="text-gray-300 mb-2">
+                  <span className="italic">Computers and Their Applications (CATA), Springer CCIS, 2025</span>
+                </p>
+                <p className="text-gray-400 text-sm">
+                  DOI: <a href="https://doi.org/10.1007/978-3-031-92178-0_8" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors">10.1007/978-3-031-92178-0_8</a>
+                  <span className="mx-2">·</span>
+                  <a href="https://doi.org/10.1007/978-3-031-92178-0_8" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors">View Paper</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects-section" className="w-full max-w-5xl mt-16">
           <div className="flex items-start mb-12">
             <h2 className="text-4xl font-bold text-white text-left mr-8">Projects:</h2>
             <div className="text-gray-400 text-sm">
@@ -206,40 +253,40 @@ export default function Home() {
             </div>
           </div>
           {/* RepoSynth */}
-          <div id="reposynth" className="mb-12 scroll-mt-20">
+          <div id="reposynth" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">RepoSynth</h3>
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-1 mb-4">
               {RepoSynthTechStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <p className="text-gray-300 mb-2">A repository understanding and retrieval platform that extracts semantic representations and structural signals (AST/dependency graphs) to support code search and analysis. Features a Rust Tree-sitter parsing daemon with multi-stage caching for efficient re-analysis. The website is live at <a href="https://reposynth.com" className="text-blue-500 hover:underline">reposynth.com</a>.</p>
+            <p className="text-gray-300 mb-4 leading-relaxed">A repository understanding and retrieval platform that extracts semantic representations and structural signals (AST/dependency graphs) to support code search and analysis. Features a Rust Tree-sitter parsing daemon with multi-stage caching for efficient re-analysis. The website is live at <a href="https://reposynth.com" className="text-blue-500 hover:text-blue-400 transition-colors">reposynth.com</a>.</p>
             <Carousel items={carouselItemsRepoSynth.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
           </div>
 
           {/* Suga */}
-          <div id="suga" className="mb-12 scroll-mt-20">
+          <div id="suga" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">Suga</h3>
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-1 mb-4">
               {SugaTechStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <p className="text-gray-300 mb-4">A workflow automation companion that captures and replays user actions, converting observed interactions into reusable automated workflows. The website is live at <a href="https://suga.cx" className="text-blue-500 hover:underline">suga.cx</a>.</p>
+            <p className="text-gray-300 mb-4 leading-relaxed">A workflow automation companion that captures and replays user actions, converting observed interactions into reusable automated workflows. The website is live at <a href="https://suga.cx" className="text-blue-500 hover:text-blue-400 transition-colors">suga.cx</a>.</p>
             <div className="relative w-full aspect-video rounded-lg overflow-hidden">
               <iframe
                 src="https://www.youtube.com/embed/9iAq3HovZnc"
@@ -252,136 +299,135 @@ export default function Home() {
           </div>
 
           {/* The Designer's Touch */}
-          <div id="designers-touch" className="mb-2 scroll-mt-20">
+          <div id="designers-touch" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">The Designer's Touch</h3>
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-1 mb-4">
               {TheDesignersTouchTechStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <p className="text-gray-300">A creative platform where users can design custom t-shirts and other merchandise, with a real-time 3D preview. </p>
+            <p className="text-gray-300 mb-4 leading-relaxed">A creative platform where users can design custom t-shirts and other merchandise, with a real-time 3D preview.</p>
             <Carousel items={carouselItems1.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
           </div>
 
           {/* Emoki */}
-          <div id="emoki" className="mb-12 scroll-mt-20">
+          <div id="emoki" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">Emoki</h3>
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-1 mb-4">
               {EmokiTechStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <p className="text-gray-300 mb-2">An emotion tracking app that aggregates users' emotions over time, helping them understand their emotional patterns.</p>
+            <p className="text-gray-300 mb-4 leading-relaxed">An emotion tracking app that aggregates users' emotions over time, helping them understand their emotional patterns.</p>
             <Carousel items={carouselItems2.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
           </div>
           {/* Baagchal */}
-          <div id="baagchal" className="mb-12 scroll-mt-20">
+          <div id="baagchal" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">Baagchal</h3>
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-1 mb-4">
               {BaagchalTechStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <p className="text-gray-300 mb-2">A digital implementation of the traditional Nepali board game Baagchal, featuring multiplayer functionality and real-time gameplay. The website is currently live at <a href="https://www.baagchal.com/" className="text-blue-500 hover:underline"> www.baagchal.com</a>.</p>
+            <p className="text-gray-300 mb-4 leading-relaxed">A digital implementation of the traditional Nepali board game Baagchal, featuring multiplayer functionality and real-time gameplay. The website is currently live at <a href="https://www.baagchal.com/" className="text-blue-500 hover:text-blue-400 transition-colors">www.baagchal.com</a>.</p>
             <Carousel items={carouselItems4.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
           </div>
           {/* Guess The Nepali */}
-          <div id="gtn" className="mb-12 scroll-mt-20">
+          <div id="gtn" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">Guess The Nepali</h3>
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-1 mb-4">
               {GTNTechStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <p className="text-gray-300 mb-2">A fun and interactive game that challenges players to guess Nepali people's ethnicities. Made as a tribute to the cultural diversity in Nepal. The website is currently live at <a href="https://www.guessthenepali.com/" className="text-blue-500 hover:underline"> www.guessthenepali.com</a>.</p>
+            <p className="text-gray-300 mb-4 leading-relaxed">A fun and interactive game that challenges players to guess Nepali people's ethnicities. Made as a tribute to the cultural diversity in Nepal. The website is currently live at <a href="https://www.guessthenepali.com/" className="text-blue-500 hover:text-blue-400 transition-colors">www.guessthenepali.com</a>.</p>
             <Carousel items={carouselItems5.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
           </div>
           {/* PonPon */}
-          <div id="ponpon" className="mb-12 scroll-mt-20">
+          <div id="ponpon" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">PonPon</h3>
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-1 mb-4">
               {PonPonTechStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <p className="text-gray-300 mb-2">A small and cute pomodoro timer that occupies a small portion of your screen. The code is available at <a href="https://github.com/aniJani/PonPon" className="text-blue-500 hover:underline"> https://github.com/aniJani/PonPon</a>.</p>
+            <p className="text-gray-300 mb-4 leading-relaxed">A small and cute pomodoro timer that occupies a small portion of your screen. The code is available at <a href="https://github.com/aniJani/PonPon" className="text-blue-500 hover:text-blue-400 transition-colors">github.com/aniJani/PonPon</a>.</p>
             <Carousel items={carouselItems6.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
           </div>
           {/* Speed reader trainer */}
-          <div id="speed-reader-trainer" className="mb-12 scroll-mt-20">
+          <div id="speed-reader-trainer" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">Speed Reader Trainer</h3>
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-1 mb-4">
               {SpeedReaderTrainerTechStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
                 >
                   {tech}
                 </span>
               ))}
-              <p className="text-gray-300 mb-2">A speed reading trainer that helps users improve their reading speed and comprehension. The website is live at <a href="https://speed-reader-trainer.vercel.app/" className="text-blue-500 hover:underline"> https://speed-reader-trainer.vercel.app/</a>.</p>
-              <Carousel items={carouselItems7.map((item, index) => (
-                <Card key={index} card={item} index={index} layout={true} />
-              ))} />
             </div>
-
+            <p className="text-gray-300 mb-4 leading-relaxed">A speed reading trainer that helps users improve their reading speed and comprehension. The website is live at <a href="https://speed-reader-trainer.vercel.app/" className="text-blue-500 hover:text-blue-400 transition-colors"> https://speed-reader-trainer.vercel.app/</a>.</p>
+            <Carousel items={carouselItems7.map((item, index) => (
+              <Card key={index} card={item} index={index} layout={true} />
+            ))} />
           </div>
           {/* Infolaya */}
-          <div id="infolaya" className="mb-12 scroll-mt-20">
+          <div id="infolaya" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">Infolaya</h3>
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-1 mb-4">
               {InfolayaTechStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <p className="text-gray-300 mb-2">A no code Data Processing and Visualization platform that transforms complex data into recommendations and insights allowing users with no technical expertise to easily analyze and visualize their data. The website is currently live at <a href="https://www.infolaya.tech/" className="text-blue-500 hover:underline"> www.infolaya.tech</a>.</p>
+            <p className="text-gray-300 mb-4 leading-relaxed">A no code Data Processing and Visualization platform that transforms complex data into recommendations and insights allowing users with no technical expertise to easily analyze and visualize their data. The website is currently live at <a href="https://www.infolaya.tech/" className="text-blue-500 hover:text-blue-400 transition-colors">www.infolaya.tech</a>.</p>
             <Carousel items={carouselItems3.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
@@ -389,63 +435,26 @@ export default function Home() {
 
 
           {/* Calorie Tracker */}
-          <div id="calorie-tracker" className="mb-12 scroll-mt-20">
+          <div id="calorie-tracker" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">Calorie Tracker</h3>
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-1 mb-4">
               {CalorieTrackerTechStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <p className="text-gray-300 mb-2">A mobile app with a very simple interface that helps users track their daily calorie intake.</p>
+            <p className="text-gray-300 mb-4 leading-relaxed">A mobile app with a very simple interface that helps users track their daily calorie intake.</p>
             <Carousel items={carouselItems.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
           </div>
         </section>
 
-        {/* Publications Section */}
-        <section id="publications-section" className="w-full max-w-5xl mt-10">
-          <h2 className="text-4xl font-bold text-white text-left mb-4">Publications:</h2>
-
-          {/* First Author Paper */}
-          <div className="mb-8">
-            <div className="text-white">
-              <p className="text-lg mb-2">
-                <span className="font-semibold">Janit Rajkarnikar</span>, N. Poudel, and N. Rahimi
-              </p>
-              <p className="text-xl font-medium mb-3 text-blue-400">
-                Unsupervised Anomaly Detection in OpenStack Logs via Fine-Tuned RoBERTa Embeddings
-              </p>
-              <p className="text-gray-300 mb-2">
-                <span className="italic">Journal of Cybersecurity, Digital Forensics and Jurisprudence, vol. 1, pp. 9–21, 2025</span>
-              </p>
-            </div>
-          </div>
-
-          {/* Co-Author Paper */}
-          <div>
-            <div className="text-white">
-              <p className="text-lg mb-2">
-                <span className="font-semibold">Divine Precious-Esue, Janit Rajkarnikar, Brian Bellrose, et al.</span>
-              </p>
-              <p className="text-xl font-medium mb-3 text-blue-400">
-                Ensemble Machine Learning Approach to Phishing Website Detection
-              </p>
-              <p className="text-gray-300 mb-2">
-                <span className="italic">Computers and Their Applications (CATA), Springer CCIS, 2025</span>
-              </p>
-              <p className="text-gray-400 text-sm">
-                DOI: <a href="https://doi.org/10.1007/978-3-031-92178-0_8" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">10.1007/978-3-031-92178-0_8</a>
-              </p>
-            </div>
-          </div>
-        </section>
       </main>
     </>
   );
