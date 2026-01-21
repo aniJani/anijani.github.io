@@ -70,6 +70,18 @@ export default function Home() {
     { category: "", title: "", src: "/spr5.png" },
   ];
 
+  const carouselItemsRepoSynth = [
+    { category: "", title: "", src: "/reposynth.png" },
+    { category: "", title: "", src: "/reposynth2.png" },
+    { category: "", title: "", src: "/reposynth3.png" },
+  ];
+
+  const carouselItemsSuga = [
+    { category: "", title: "", src: "/suga1.png" },
+    { category: "", title: "", src: "/suga2.png" },
+    { category: "", title: "", src: "/suga3.png" },
+  ];
+
   const TheDesignersTouchTechStack = ["React", "Node.js", "Three.js", "Express", "Firebase", "AWS"];
   const EmokiTechStack = ["React Native", "Node.js", "SQLite", "Express", "Flask", "Firebase", "MongoDB"];
   const CalorieTrackerTechStack = ["React Native", "Node.js", "SQLite"];
@@ -78,6 +90,8 @@ export default function Home() {
   const GTNTechStack = ["Next.js", "Node.js", "MongoDB"];
   const PonPonTechStack = ["React", "TypeScript", "Tauri", "Node.js"];
   const SpeedReaderTrainerTechStack = ["Next.js", "Node.js"];
+  const RepoSynthTechStack = ["Python", "Rust", "TypeScript", "SentenceTransformers", "FAISS"];
+  const SugaTechStack = ["FastAPI", "Next.js", "Supabase", "Electron"];
 
   useEffect(() => {
     const handleClick = (e) => {
@@ -159,32 +173,84 @@ export default function Home() {
             <div className="text-gray-400 text-sm">
               <ul className="space-y-2">
                 <li>
-                  <a href="#designers-touch" className="hover:underline transition-all duration-300 ease-in-out">1. The Designer's Touch</a>
+                  <a href="#reposynth" className="hover:underline transition-all duration-300 ease-in-out">1. RepoSynth</a>
                 </li>
                 <li>
-                  <a href="#emoki" className="hover:underline transition-all duration-300 ease-in-out">2. Emoki</a>
+                  <a href="#suga" className="hover:underline transition-all duration-300 ease-in-out">2. Suga</a>
                 </li>
                 <li>
-                  <a href="#baagchal" className="hover:underline transition-all duration-300 ease-in-out">3. Baagchal</a>
+                  <a href="#designers-touch" className="hover:underline transition-all duration-300 ease-in-out">3. The Designer's Touch</a>
                 </li>
                 <li>
-                  <a href="#gtn" className="hover:underline transition-all duration-300 ease-in-out">4. Guess The Nepali</a>
+                  <a href="#emoki" className="hover:underline transition-all duration-300 ease-in-out">4. Emoki</a>
                 </li>
                 <li>
-                  <a href="#ponpon" className="hover:underline transition-all duration-300 ease-in-out">5. PonPon</a>
+                  <a href="#baagchal" className="hover:underline transition-all duration-300 ease-in-out">5. Baagchal</a>
                 </li>
                 <li>
-                  <a href="#speed-reader-trainer" className="hover:underline transition-all duration-300 ease-in-out">6. Speed Reader Trainer</a>
+                  <a href="#gtn" className="hover:underline transition-all duration-300 ease-in-out">6. Guess The Nepali</a>
                 </li>
                 <li>
-                  <a href="#infolaya" className="hover:underline transition-all duration-300 ease-in-out">7. Infolaya</a>
+                  <a href="#ponpon" className="hover:underline transition-all duration-300 ease-in-out">7. PonPon</a>
                 </li>
                 <li>
-                  <a href="#calorie-tracker" className="hover:underline transition-all duration-300 ease-in-out">8. Calorie Tracker</a>
+                  <a href="#speed-reader-trainer" className="hover:underline transition-all duration-300 ease-in-out">8. Speed Reader Trainer</a>
+                </li>
+                <li>
+                  <a href="#infolaya" className="hover:underline transition-all duration-300 ease-in-out">9. Infolaya</a>
+                </li>
+                <li>
+                  <a href="#calorie-tracker" className="hover:underline transition-all duration-300 ease-in-out">10. Calorie Tracker</a>
                 </li>
               </ul>
             </div>
           </div>
+          {/* RepoSynth */}
+          <div id="reposynth" className="mb-12 scroll-mt-20">
+            <h3 className="text-2xl font-semibold text-white mb-2">RepoSynth</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {RepoSynthTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <p className="text-gray-300 mb-2">A repository understanding and retrieval platform that extracts semantic representations and structural signals (AST/dependency graphs) to support code search and analysis. Features a Rust Tree-sitter parsing daemon with multi-stage caching for efficient re-analysis. The website is live at <a href="https://reposynth.com" className="text-blue-500 hover:underline">reposynth.com</a>.</p>
+            <Carousel items={carouselItemsRepoSynth.map((item, index) => (
+              <Card key={index} card={item} index={index} layout={true} />
+            ))} />
+          </div>
+
+          {/* Suga */}
+          <div id="suga" className="mb-12 scroll-mt-20">
+            <h3 className="text-2xl font-semibold text-white mb-2">Suga</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {SugaTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-50 text-xs font-medium py-1 px-2 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <p className="text-gray-300 mb-4">A workflow automation companion that captures and replays user actions, converting observed interactions into reusable automated workflows. The website is live at <a href="https://suga.cx" className="text-blue-500 hover:underline">suga.cx</a>.</p>
+            <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/9iAq3HovZnc"
+                title="Suga Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
+              />
+            </div>
+          </div>
+
           {/* The Designer's Touch */}
           <div id="designers-touch" className="mb-2 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">The Designer's Touch</h3>
@@ -346,7 +412,24 @@ export default function Home() {
         {/* Publications Section */}
         <section id="publications-section" className="w-full max-w-5xl mt-10">
           <h2 className="text-4xl font-bold text-white text-left mb-4">Publications:</h2>
-          <div >
+
+          {/* First Author Paper */}
+          <div className="mb-8">
+            <div className="text-white">
+              <p className="text-lg mb-2">
+                <span className="font-semibold">Janit Rajkarnikar</span>, N. Poudel, and N. Rahimi
+              </p>
+              <p className="text-xl font-medium mb-3 text-blue-400">
+                Unsupervised Anomaly Detection in OpenStack Logs via Fine-Tuned RoBERTa Embeddings
+              </p>
+              <p className="text-gray-300 mb-2">
+                <span className="italic">Journal of Cybersecurity, Digital Forensics and Jurisprudence, vol. 1, pp. 9–21, 2025</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Co-Author Paper */}
+          <div>
             <div className="text-white">
               <p className="text-lg mb-2">
                 <span className="font-semibold">Divine Precious-Esue, Janit Rajkarnikar, Brian Bellrose, et al.</span>
