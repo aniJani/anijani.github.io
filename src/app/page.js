@@ -87,6 +87,15 @@ export default function Home() {
     { category: "", title: "", src: "/jb3.png" },
   ];
 
+  const carouselItemsPermitPro = [
+    { category: "", title: "", src: "/pp.jpg" },
+    { category: "", title: "", src: "/pp1.png" },
+    { category: "", title: "", src: "/pp2.png" },
+    { category: "", title: "", src: "/pp3.png" },
+    { category: "", title: "", src: "/pp4.png" },
+    { category: "", title: "", src: "/pp5.jpg" },
+  ];
+
   const TheDesignersTouchTechStack = ["React", "Node.js", "Three.js", "Express", "Firebase", "AWS"];
   const EmokiTechStack = ["React Native", "Node.js", "SQLite", "Express", "Flask", "Firebase", "MongoDB"];
   const CalorieTrackerTechStack = ["React Native", "Node.js", "SQLite"];
@@ -98,6 +107,7 @@ export default function Home() {
   const RepoSynthTechStack = ["Python", "Rust", "TypeScript", "SentenceTransformers", "FAISS"];
   const SugaTechStack = ["FastAPI", "Next.js", "Supabase", "Electron"];
   const JBConstructionTechStack = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Sanity", "D3.js"];
+  const PermitProTechStack = ["React Native", "Expo", "TypeScript", "Django"];
 
   useEffect(() => {
     const handleClick = (e) => {
@@ -223,64 +233,21 @@ export default function Home() {
         <section id="projects-section" className="w-full max-w-5xl mt-16">
           <div className="flex items-start mb-12">
             <h2 className="text-4xl font-bold text-white text-left mr-8">Projects:</h2>
-            <div className="text-gray-400 text-sm">
-              <ul className="space-y-2">
-                <li>
-                  <a href="#reposynth" className="hover:underline transition-all duration-300 ease-in-out">1. RepoSynth</a>
-                </li>
-                <li>
-                  <a href="#suga" className="hover:underline transition-all duration-300 ease-in-out">2. Suga</a>
-                </li>
-                <li>
-                  <a href="#jb-construction" className="hover:underline transition-all duration-300 ease-in-out">3. Jackson Brothers Construction</a>
-                </li>
-                <li>
-                  <a href="#designers-touch" className="hover:underline transition-all duration-300 ease-in-out">4. The Designer's Touch</a>
-                </li>
-                <li>
-                  <a href="#emoki" className="hover:underline transition-all duration-300 ease-in-out">5. Emoki</a>
-                </li>
-                <li>
-                  <a href="#baagchal" className="hover:underline transition-all duration-300 ease-in-out">6. Baagchal</a>
-                </li>
-                <li>
-                  <a href="#gtn" className="hover:underline transition-all duration-300 ease-in-out">7. Guess The Nepali</a>
-                </li>
-                <li>
-                  <a href="#ponpon" className="hover:underline transition-all duration-300 ease-in-out">8. PonPon</a>
-                </li>
-                <li>
-                  <a href="#speed-reader-trainer" className="hover:underline transition-all duration-300 ease-in-out">9. Speed Reader Trainer</a>
-                </li>
-                <li>
-                  <a href="#infolaya" className="hover:underline transition-all duration-300 ease-in-out">10. Infolaya</a>
-                </li>
-                <li>
-                  <a href="#calorie-tracker" className="hover:underline transition-all duration-300 ease-in-out">11. Calorie Tracker</a>
-                </li>
-              </ul>
+            <div className="text-gray-400 text-sm grid grid-cols-2 gap-x-8 gap-y-2">
+              <a href="#suga" className="hover:underline transition-all duration-300 ease-in-out">1. Suga</a>
+              <a href="#baagchal" className="hover:underline transition-all duration-300 ease-in-out">7. Baagchal</a>
+              <a href="#reposynth" className="hover:underline transition-all duration-300 ease-in-out">2. RepoSynth</a>
+              <a href="#gtn" className="hover:underline transition-all duration-300 ease-in-out">8. Guess The Nepali</a>
+              <a href="#jb-construction" className="hover:underline transition-all duration-300 ease-in-out">3. Jackson Brothers Construction</a>
+              <a href="#ponpon" className="hover:underline transition-all duration-300 ease-in-out">9. PonPon</a>
+              <a href="#permit-pro" className="hover:underline transition-all duration-300 ease-in-out">4. Permit Pro</a>
+              <a href="#speed-reader-trainer" className="hover:underline transition-all duration-300 ease-in-out">10. Speed Reader Trainer</a>
+              <a href="#designers-touch" className="hover:underline transition-all duration-300 ease-in-out">5. The Designer's Touch</a>
+              <a href="#infolaya" className="hover:underline transition-all duration-300 ease-in-out">11. Infolaya</a>
+              <a href="#emoki" className="hover:underline transition-all duration-300 ease-in-out">6. Emoki</a>
+              <a href="#calorie-tracker" className="hover:underline transition-all duration-300 ease-in-out">12. Calorie Tracker</a>
             </div>
           </div>
-          {/* RepoSynth */}
-          <div id="reposynth" className="mb-16 scroll-mt-20">
-            <h3 className="text-2xl font-semibold text-white mb-2">RepoSynth</h3>
-            {/* Tech Stack */}
-            <div className="flex flex-wrap gap-1 mb-4">
-              {RepoSynthTechStack.map((tech, index) => (
-                <span
-                  key={index}
-                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <p className="text-gray-300 mb-4 leading-relaxed">A repository understanding and retrieval platform that extracts semantic representations and structural signals (AST/dependency graphs) to support code search and analysis. Features a Rust Tree-sitter parsing daemon with multi-stage caching for efficient re-analysis. The website is live at <a href="https://reposynth.com" className="text-blue-500 hover:text-blue-400 transition-colors">reposynth.com</a>.</p>
-            <Carousel items={carouselItemsRepoSynth.map((item, index) => (
-              <Card key={index} card={item} index={index} layout={true} />
-            ))} />
-          </div>
-
           {/* Suga */}
           <div id="suga" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">Suga</h3>
@@ -307,6 +274,26 @@ export default function Home() {
             </div>
           </div>
 
+          {/* RepoSynth */}
+          <div id="reposynth" className="mb-16 scroll-mt-20">
+            <h3 className="text-2xl font-semibold text-white mb-2">RepoSynth</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {RepoSynthTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <p className="text-gray-300 mb-4 leading-relaxed">A repository understanding and retrieval platform that extracts semantic representations and structural signals (AST/dependency graphs) to support code search and analysis. Features a Rust Tree-sitter parsing daemon with multi-stage caching for efficient re-analysis. The website is live at <a href="https://reposynth.com" className="text-blue-500 hover:text-blue-400 transition-colors">reposynth.com</a>.</p>
+            <Carousel items={carouselItemsRepoSynth.map((item, index) => (
+              <Card key={index} card={item} index={index} layout={true} />
+            ))} />
+          </div>
+
           {/* Jackson Brothers Construction */}
           <div id="jb-construction" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-semibold text-white mb-2">Jackson Brothers Construction</h3>
@@ -323,6 +310,26 @@ export default function Home() {
             </div>
             <p className="text-gray-300 mb-4 leading-relaxed">A business website for a family-owned general contractor, featuring an interactive service area map, headless CMS integration, and lead generation forms. The website is live at <a href="https://www.welikeconstruction.com" className="text-blue-500 hover:text-blue-400 transition-colors">welikeconstruction.com</a>.</p>
             <Carousel items={carouselItemsJB.map((item, index) => (
+              <Card key={index} card={item} index={index} layout={true} />
+            ))} />
+          </div>
+
+          {/* Permit Pro */}
+          <div id="permit-pro" className="mb-16 scroll-mt-20">
+            <h3 className="text-2xl font-semibold text-white mb-2">Permit Pro</h3>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {PermitProTechStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-white border border-white opacity-70 text-sm font-medium py-1 px-2 rounded-full hover:opacity-100 transition-opacity"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <p className="text-gray-300 mb-4 leading-relaxed">A cross-platform mobile app for the construction industry that transforms building permit data into actionable leads, featuring interactive heat maps, analytics dashboards, and in-app subscriptions. Made in collaboration with a local business owner. The app is available on the <a href="https://apps.apple.com/us/app/the-permit-pro/id6751512655" className="text-blue-500 hover:text-blue-400 transition-colors">App Store</a> and <a href="https://play.google.com/store/apps/details?id=com.permit.PermitPro" className="text-blue-500 hover:text-blue-400 transition-colors">Google Play</a>.</p>
+            <Carousel items={carouselItemsPermitPro.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
           </div>
