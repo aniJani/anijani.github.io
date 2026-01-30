@@ -425,7 +425,7 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <p className="text-gray-300 mb-4 leading-relaxed">A small and cute pomodoro timer that occupies a small portion of your screen. The code is available at <a href="https://github.com/aniJani/PonPon" className="text-blue-500 hover:text-blue-400 transition-colors">github.com/aniJani/PonPon</a>.</p>
+            <p className="text-gray-300 mb-4 leading-relaxed">A small and cute pomodoro timer that occupies a small portion of your screen. The artifact for windows is available at <a href="https://github.com/aniJani/PonPon" className="text-blue-500 hover:text-blue-400 transition-colors">github.com/aniJani/PonPon</a>.</p>
             <Carousel items={carouselItems6.map((item, index) => (
               <Card key={index} card={item} index={index} layout={true} />
             ))} />
