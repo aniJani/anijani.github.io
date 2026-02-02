@@ -30,7 +30,7 @@ const Navbar = () => {
                     Projects
                 </button>
                 <Link
-                    href="/JanitRajkarnikarPitt.pdf"
+                    href="/Janit-Rajkarnikar.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/80 font-medium text-sm uppercase tracking-wider cursor-pointer px-4 py-2 hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-4 after:right-4 after:h-px after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
