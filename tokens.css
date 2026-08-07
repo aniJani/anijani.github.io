@@ -1,0 +1,70 @@
+/* Hallmark · theme: custom (tuned) · vibe: "dense technical index, warm near-black, friendly mono"
+ * Built from the Nite Riot reference after two catalog themes (Cobalt, Newsprint) missed.
+ * Monochrome on purpose: both accent hues tried so far were rejected, so the page carries
+ * no chromatic signal at all — emphasis comes from weight, rule and white, never colour.
+ * Axes: paper-band=dark (L17%, warm) · display-style=mono · accent-hue=neutral
+ */
+
+:root {
+  /* Warm near-black. Never pure #000 / #fff (gate 7). */
+  --color-paper: oklch(17% 0.006 75);
+  --color-paper-2: oklch(21% 0.007 75);
+  --color-paper-3: oklch(25% 0.008 75);
+  --color-rule: oklch(31% 0.008 72);
+  --color-rule-2: oklch(43% 0.010 72);
+  --color-muted: oklch(65% 0.009 72);
+  --color-neutral: oklch(77% 0.008 72);
+  --color-ink-2: oklch(89% 0.007 72);
+  --color-ink: oklch(97% 0.006 72);
+
+  /* Monochrome: the accent IS the ink. */
+  --color-accent: oklch(97% 0.006 72);
+  --color-accent-ink: oklch(17% 0.006 75);
+  --color-focus: oklch(85% 0.05 250);
+  --color-scrim-strong: oklch(11% 0.006 75 / 0.8);
+
+  /* Two families. DM Mono carries the structure; Plus Jakarta Sans the prose. */
+  --font-mono: var(--font-dm-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-body: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-dm-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-label: var(--font-dm-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  --display-weight: 500;
+  --display-style: normal;
+
+  --text-xs: 0.6875rem;
+  --text-sm: 0.75rem;
+  --text-base: 0.8125rem;
+  --text-md: 0.875rem;
+  --text-lg: 1rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.75rem;
+
+  --tracking-label: 0.08em;
+  --tracking-tight: 0.01em;
+
+  --lh-normal: 1.55;
+  --measure: 62ch;
+
+  /* Space — 4pt scale. Tight by design; density is the point. */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
+
+  --row-h: 2.25rem;
+  --rule-hair: 1px;
+  --radius-card: 0;
+  --radius-pill: 0;
+  --radius-input: 0;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-short: 140ms;
+  --dur-mid: 260ms;
+}

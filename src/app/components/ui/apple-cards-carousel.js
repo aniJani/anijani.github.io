@@ -1,225 +1,139 @@
 "use client";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { cn } from "@/lib/utils";
-import {
-    IconArrowNarrowLeft,
-    IconArrowNarrowRight,
-    IconX,
-} from "@tabler/icons-react";
+import { IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import React, {
-    createContext,
-    useContext,
-    useEffect,
-    useRef,
-    useState,
-} from "react";
-
-export const CarouselContext = createContext({});
+import React, { useEffect, useRef, useState } from "react";
 
 export const Carousel = ({ items, initialScroll = 0 }) => {
     const carouselRef = React.useRef(null);
-    const [canScrollLeft, setCanScrollLeft] = React.useState(false);
-    const [canScrollRight, setCanScrollRight] = React.useState(true);
 
     useEffect(() => {
         if (carouselRef.current) {
             carouselRef.current.scrollLeft = initialScroll;
-            checkScrollability();
         }
     }, [initialScroll]);
 
-    const checkScrollability = () => {
-        if (carouselRef.current) {
-            const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-            setCanScrollLeft(scrollLeft > 0);
-            setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
-        }
-    };
-
-    const scrollLeft = () => {
-        if (carouselRef.current) {
-            carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
-        }
-    };
-
-    const scrollRight = () => {
-        if (carouselRef.current) {
-            carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
-        }
-    };
-
     return (
-        <CarouselContext.Provider value={{}}>
-            <div className="relative w-full">
-                <div
-                    className="flex w-full overflow-x-scroll overscroll-x-auto py-1 md:py-1 scroll-smooth [scrollbar-width:none]"
-                    ref={carouselRef}
-                    onScroll={checkScrollability}
-                >
-                    <div className={cn(
-                        "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
-                    )}></div>
-
-                    <div className={cn(
-                        "flex flex-row justify-start gap-4 pl-4",
-                        "max-w-7xl mx-auto"
-                    )}>
-                        {items.map((item, index) => (
-                            <motion.div
-                                initial={{
-                                    opacity: 0,
-                                    y: 20,
-                                }}
-                                animate={{
-                                    opacity: 1,
-                                    y: 0,
-                                    transition: {
-                                        duration: 0.5,
-                                        delay: 0.2 * index,
-                                        ease: "easeOut",
-                                        once: true,
-                                    },
-                                }}
-                                key={"card" + index}
-                                className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
-                            >
-                                {item}
-                            </motion.div>
-                        ))}
-                    </div>
+        <div
+            ref={carouselRef}
+            className="carousel-x flex w-full gap-3 overflow-x-auto overscroll-x-contain scroll-smooth py-1"
+        >
+            {items.map((item, index) => (
+                <div key={"card" + index} className="shrink-0">
+                    {item}
                 </div>
-
-            </div>
-        </CarouselContext.Provider>
+            ))}
+        </div>
     );
 };
-export const Card = ({
-    card,
-    index,
-    layout = false,
-}) => {
+
+export const Card = ({ card, index }) => {
     const [open, setOpen] = useState(false);
-    const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
-    const [isLandscape, setIsLandscape] = useState(false);
+    const [isLandscape, setIsLandscape] = useState(true);
     const containerRef = useRef(null);
+    const alt = card.alt || "Project screenshot";
 
     useEffect(() => {
-        function onKeyDown(event) {
-            if (event.key === "Escape") {
-                handleClose();
-            }
-        }
+        if (!open) return;
 
-        if (open) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
-
+        const onKeyDown = (event) => {
+            if (event.key === "Escape") setOpen(false);
+        };
+        const prevOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
         window.addEventListener("keydown", onKeyDown);
-        return () => window.removeEventListener("keydown", onKeyDown);
+
+        return () => {
+            document.body.style.overflow = prevOverflow;
+            window.removeEventListener("keydown", onKeyDown);
+        };
     }, [open]);
 
-    useOutsideClick(containerRef, () => handleClose());
-
-    const handleOpen = (e) => {
-        e.preventDefault();
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
+    useOutsideClick(containerRef, () => {
+        if (open) setOpen(false);
+    });
 
     const handleImageLoad = (e) => {
         const { naturalWidth, naturalHeight } = e.target;
-        setImageDimensions({ width: naturalWidth, height: naturalHeight });
-        setIsLandscape(naturalWidth > naturalHeight);
+        setIsLandscape(naturalWidth >= naturalHeight);
     };
 
     return (
         <>
             <AnimatePresence>
                 {open && (
-                    <div className="fixed inset-0 h-screen z-50 overflow-hidden flex items-center justify-center">
-                        <div
+                    <div className="fixed inset-0 z-[100] flex h-screen items-center justify-center overflow-hidden">
+                        <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="bg-black/80 backdrop-blur-lg h-full w-full fixed inset-0"
+                            transition={{ duration: 0.18 }}
+                            className="fixed inset-0 h-full w-full bg-[var(--color-scrim-strong)] backdrop-blur-sm"
                         />
-                        <div
+                        <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
+                            transition={{ duration: 0.18 }}
                             ref={containerRef}
-                            className="relative z-[60] max-h-[90vh] max-w-[90vw] p-4"
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label={alt}
+                            className="relative z-[110] max-h-[90vh] max-w-[92vw] p-2"
                         >
                             <button
-                                className="fixed top-4 right-4 h-8 w-8 bg-black dark:bg-white rounded-full flex items-center justify-center z-50"
-                                onClick={handleClose}
+                                type="button"
+                                aria-label="Close image"
+                                className="absolute -top-1 right-0 z-10 flex h-11 w-11 items-center justify-center rounded-md bg-[var(--color-paper)] text-[var(--color-ink)] shadow-md"
+                                onClick={() => setOpen(false)}
                             >
-                                <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+                                <IconX className="h-5 w-5" />
                             </button>
                             <Image
                                 src={card.src}
-                                alt={card.title}
-                                width={imageDimensions.width}
-                                height={imageDimensions.height}
-                                className="rounded-3xl object-contain max-h-[calc(90vh-2rem)] max-w-[calc(90vw-2rem)]"
-                                onLoad={handleImageLoad}
+                                alt={alt}
+                                width={1600}
+                                height={1000}
+                                className="max-h-[calc(90vh-2rem)] w-auto max-w-[calc(92vw-1rem)] rounded-[var(--radius-card)] object-contain"
                             />
-                        </div>
+                        </motion.div>
                     </div>
                 )}
             </AnimatePresence>
-            <motion.button
-                onClick={handleOpen}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
+
+            <button
+                type="button"
+                onClick={() => setOpen(true)}
+                aria-label={`Open ${alt}`}
                 className={cn(
-                    "rounded-3xl bg-black dark:bg-neutral-900 overflow-hidden flex flex-col items-start justify-start relative z-10 shadow-none border-none cursor-pointer hover:shadow-lg hover:shadow-white/5 transition-shadow",
-                    isLandscape ? "h-36 w-72 md:h-96 md:w-[43rem]" : "h-72 w-32 md:h-[36rem] md:w-64" // Different styles for landscape and portrait
+                    "group relative block overflow-hidden rounded-[var(--radius-card)]",
+                    "border border-[var(--color-rule)] bg-[var(--color-paper-2)]",
+                    "transition-colors duration-200 hover:border-[var(--color-accent)]",
+                    isLandscape
+                        ? "h-44 w-72 md:h-[17rem] md:w-[30rem]"
+                        : "h-72 w-36 md:h-[26rem] md:w-[13rem]"
                 )}
             >
                 <BlurImage
                     src={card.src}
-                    alt={card.title}
+                    alt={alt}
                     fill
-                    className="object-contain absolute z-10 inset-0 bg-black"
+                    sizes="(max-width: 48rem) 18rem, 30rem"
+                    className="object-contain"
                     onLoad={handleImageLoad}
-                    style={{ backgroundColor: 'black' }}
                 />
-                <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full text-white z-20">
-                    <h3 className="text-xl font-semibold">{card.title}</h3>
-                </div>
-            </motion.button>
+            </button>
         </>
     );
 };
 
-
-
-
-export const BlurImage = ({
-    height,
-    width,
-    src,
-    className,
-    alt,
-    onLoad,
-    ...rest
-}) => {
+export const BlurImage = ({ height, width, src, className, alt, onLoad, ...rest }) => {
     const [isLoading, setLoading] = useState(true);
     return (
         <Image
-            className={cn(
-                "transition duration-300",
-                isLoading ? "blur-sm" : "blur-0",
-                className
-            )}
+            className={cn("transition-opacity duration-300", isLoading ? "opacity-0" : "opacity-100", className)}
             onLoad={(e) => {
                 setLoading(false);
                 if (onLoad) onLoad(e);
@@ -229,10 +143,8 @@ export const BlurImage = ({
             height={height}
             loading="lazy"
             decoding="async"
-            blurDataURL={typeof src === "string" ? src : undefined}
-            alt={alt ? alt : "Background of a beautiful view"}
+            alt={alt || "Project screenshot"}
             {...rest}
         />
     );
 };
-
