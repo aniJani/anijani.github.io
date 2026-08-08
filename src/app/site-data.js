@@ -50,13 +50,42 @@ export const experience = [
   },
 ];
 
-export const openSource = {
-  project: "Scrapy",
-  href: "https://github.com/scrapy/scrapy/pull/7818",
-  label: "PR #7818 · merged",
-  blurb:
-    "Fixed a Python 3.14 forward-compatibility break — PEP 649 lazy annotations raising NameError during Scrapy's middleware and stats-collector introspection. Shipped a signature-inspection helper with regression tests, merged after maintainer review.",
-};
+export const openSource = [
+  {
+    id: "graphify",
+    project: "Graphify",
+    // PR was closed, not merged — the maintainer folded the change into the
+    // release commit and credited it. Verified the test + guard exist at v0.9.36.
+    label: "PR #2522 · shipped in v0.9.36",
+    scale: "104k stars · Python",
+    blurb:
+      "graphify cluster-only ignored the return value of to_json(), so when the shrink guard refused to overwrite graph.json the command still exited 0 and printed \u201cupdated\u201d \u2014 leaving the report and labels describing a clustering the graph did not contain. Reordered the writes so the graph goes first, checked the refusal, and exited non-zero naming the untouched artifacts. Shipped with a regression test.",
+    links: [
+      {
+        label: "PR #2522",
+        href: "https://github.com/Graphify-Labs/graphify/pull/2522",
+      },
+      {
+        label: "v0.9.36 release",
+        href: "https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.36",
+      },
+    ],
+  },
+  {
+    id: "scrapy",
+    project: "Scrapy",
+    label: "PR #7818 · merged",
+    scale: "64k stars · Python",
+    blurb:
+      "Fixed a Python 3.14 forward-compatibility break \u2014 PEP 649 lazy annotations raising NameError during Scrapy's middleware and stats-collector introspection. Shipped a signature-inspection helper with regression tests, merged after maintainer review.",
+    links: [
+      {
+        label: "PR #7818",
+        href: "https://github.com/scrapy/scrapy/pull/7818",
+      },
+    ],
+  },
+];
 
 export const publications = [
   {

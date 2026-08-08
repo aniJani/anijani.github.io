@@ -205,24 +205,34 @@ export default function Home() {
         <section className="sheet" id="open-source">
           <div className="sheet__head">
             <h2 className="sheet__title">Open source</h2>
-            <p className="sheet__count">1 entry</p>
+            <p className="sheet__count">{openSource.length} entries</p>
           </div>
 
-          <div className="oss">
-            <h3 className="oss__title">
-              {openSource.project} <span>{openSource.label}</span>
-            </h3>
-            <p className="oss__blurb">{openSource.blurb}</p>
-            <p className="row__links">
-              <a
-                href={openSource.href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                github.com/scrapy/scrapy <span aria-hidden="true">↗</span>
-              </a>
-            </p>
-          </div>
+          <ol className="rows rows--plain">
+            {openSource.map((o) => (
+              <li className="oss" key={o.id}>
+                <p className="oss__meta">{o.label}</p>
+                <div className="oss__body">
+                  <h3 className="oss__title">
+                    {o.project} <span>{o.scale}</span>
+                  </h3>
+                  <p className="oss__blurb">{o.blurb}</p>
+                  <p className="row__links">
+                    {o.links.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {l.label} <span aria-hidden="true">↗</span>
+                      </a>
+                    ))}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </section>
 
         {/* ---- Info ---- */}
