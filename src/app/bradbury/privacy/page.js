@@ -2,7 +2,7 @@ import s from "../bradbury.module.css";
 
 export const metadata = {
   title: "Bradbury — Privacy",
-  description: "Bradbury collects nothing. Everything you do stays on your device.",
+  description: "Bradbury collects nothing. Your reading stays on your device and in your own iCloud.",
 };
 
 export default function Privacy() {
@@ -23,33 +23,40 @@ export default function Privacy() {
           code is present in the app.
         </p>
 
-        <h2 className={s.h2}>What stays on your device</h2>
+        <h2 className={s.h2}>Where your reading lives</h2>
         <p className={s.body}>
-          Everything you do in the app is written to your device&rsquo;s own storage and is never
-          sent anywhere: the passages you highlight, the notes you write, which days you have
-          read, your reading-size and appearance settings.
+          The passages you highlight, the notes and thoughts you write, the stars you give, which
+          days you have read, and your reading settings are kept on your device.
         </p>
         <p className={s.body}>
-          Deleting the app deletes all of it. Nobody else can see it, including us.
+          If you are signed in to iCloud, Bradbury also keeps a copy in your own iCloud account, so
+          your reading follows you to another iPhone. That copy sits in your iCloud storage, which
+          Apple keeps for you; we cannot see it. To remove it, delete Bradbury&rsquo;s data under
+          iCloud storage in Settings. Deleting the app removes what is on the device.
         </p>
 
         <h2 className={s.h2}>What the app connects to</h2>
-        <p className={s.body}>Bradbury contacts two places, and only ever reads from them:</p>
+        <p className={s.body}>
+          Besides your own iCloud account, Bradbury contacts one place, and only ever reads from
+          it: a content host, to download each day&rsquo;s painting and readings. The app sends
+          nothing but the request itself.
+        </p>
+        <p className={s.body}>
+          As with any request to any website, that server may keep ordinary technical logs, which
+          can include an IP address. Neither we nor the app use such logs to identify or follow
+          anyone.
+        </p>
+
+        <h2 className={s.h2}>What it asks to use</h2>
         <ul className={s.list}>
           <li>
-            A content host, to download each day&rsquo;s painting and readings. The app sends
-            nothing but the request itself.
+            Photos, only to add a card you choose to save. The app cannot see your library.
           </li>
-          <li>
-            A dictionary service, <code>freedictionaryapi.com</code>, and only when you tap a word
-            to look it up. It receives that single word. It is not told who asked, and the app
-            sends nothing else.
-          </li>
+          <li>Notifications, only if you turn on the daily reminder.</li>
         </ul>
         <p className={s.body}>
-          As with any request to any website, those servers may keep ordinary technical logs,
-          which can include an IP address. Neither we nor the app use such logs to identify or
-          follow anyone.
+          Listening uses the voices on your iPhone; the text is not sent anywhere. Sharing sends
+          only what you choose, through Messages or the share sheet.
         </p>
 
         <h2 className={s.h2}>Children</h2>
@@ -64,7 +71,7 @@ export default function Privacy() {
         </p>
 
         <div className={s.foot}>
-          <p>Last updated 27 August 2026.</p>
+          <p>Last updated 14 October 2026.</p>
           <p>
             Questions: <a href="mailto:rajkarnikarjanit22@gmail.com">rajkarnikarjanit22@gmail.com</a>
           </p>

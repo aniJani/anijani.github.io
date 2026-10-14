@@ -18,7 +18,7 @@ export default function Support() {
         <p className={s.body}>
           A poem, an essay and a short story, chosen to be read in a sitting. The reading time is
           shown before you start. Everything comes from the public domain &mdash; the Metropolitan
-          Museum of Art, Wikisource and Standard Ebooks.
+          Museum of Art, Wikisource, Project Gutenberg and Standard Ebooks.
         </p>
 
         <h2 className={s.h2}>The day changes at midnight</h2>
@@ -35,15 +35,30 @@ export default function Support() {
 
         <h2 className={s.h2}>Reading without a connection</h2>
         <p className={s.body}>
-          What you have already opened stays available offline. Tomorrow&rsquo;s painting is fetched
-          ahead of time while you have a connection, so a morning without signal still has a day
-          in it.
+          What you have already opened stays available offline. The widget fetches
+          tomorrow&rsquo;s painting ahead of time, so it turns over at midnight even without
+          signal.
+        </p>
+
+        <h2 className={s.h2}>Listening</h2>
+        <p className={s.body}>
+          Tap the headphones in a reading to have it read aloud. It keeps going with the screen
+          locked. For a better voice, download one in Settings &rsaquo; Accessibility &rsaquo;
+          Spoken Content.
+        </p>
+
+        <h2 className={s.h2}>Sharing</h2>
+        <p className={s.body}>
+          Highlight a passage and choose Share as Card, or share the painting or your thought on a
+          reading. Save the card to Photos, copy the text, or send it.
         </p>
 
         <h2 className={s.h2}>Your highlights and notes</h2>
         <p className={s.body}>
-          They live on your device only, and are never uploaded. Deleting the app deletes them,
-          and there is no way to recover them afterwards.
+          They are kept on your device and, if you are signed in to iCloud, in your own iCloud
+          account, so they follow you to another iPhone. Deleting the app on one phone leaves the
+          iCloud copy. To remove them everywhere, delete Bradbury&rsquo;s data under iCloud
+          storage in Settings.
         </p>
 
         <h2 className={s.h2}>Something wrong?</h2>
